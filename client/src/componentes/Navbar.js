@@ -5,19 +5,24 @@ import React, {useState} from "react";
 import { SidebarData } from "./SidebarData";
 import {IconContext} from "react-icons";
 
-function Navbar(){
+
+const Navbar = () => {
     const [sidebar, setSidebar] = useState(false);
-    
     const showSidebar =() => setSidebar(!sidebar);
 
     return(
-        <>
         <IconContext.Provider value={{color: "red"}}>
-            <div className="navbar" >
-                <Link to="#" className="menu-bar"> 
-                <FaBars onClick={showSidebar} />
-                </Link>
-            </div>
+            <nav className="navbar" >
+                <ul>
+                    <li>
+                        <Link to="#" className="menu-bar"> 
+                        <FaBars onClick={showSidebar} />
+                        </Link>
+                    </li>
+                    <li style={{float:"right"}}><a class="active" href="#contacto">CONTACTO</a></li>
+                    <li style={{float:"right"}}><a class="active" href="#acercade">ACERCA DE</a></li>
+                </ul>
+            </nav>
             <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
                 <ul className='nav-menu-items' onClick={showSidebar} >
                     <li className='navbar-toggle'>
@@ -38,7 +43,6 @@ function Navbar(){
                 </ul>
             </nav>
             </IconContext.Provider>
-        </>
     )
 }
 
