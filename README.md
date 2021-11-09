@@ -1,2 +1,3 @@
 # Sidebar
-sidebar con react
+sidebar con reactjs y sass para los estilos
+
