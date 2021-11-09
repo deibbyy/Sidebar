@@ -1,18 +1,15 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Navbar from './componentes/Navbar';
-import Sidebar from './componentes/Sidebar';
 import Home from './Paginas/Home';
 import Ventas from './Paginas/Ventas';
 import Clientes from './Paginas/Clientes';
-
 
 function App() {
   return (
     <Router>
       <div className="flex">
-        <Sidebar />
-        <div className="content w-100">
+        <div className="content">
           <Navbar />
           <Routes>
           <Route path = "/"  exact={true} element={<Home/>} />
